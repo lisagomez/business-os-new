@@ -4,7 +4,7 @@
 // semantica de la proyeccion es identica por construccion.
 import { parseExpression } from 'cron-parser'
 
-const DAEMON_TZ = 'America/Mexico_City'
+const DAEMON_TZ = process.env.NEXT_PUBLIC_DAEMON_TZ ?? 'America/Mexico_City'
 
 // Frecuencia aproximada (runs/dia) para ordenar por "mas usados". Heuristica
 // sobre la expresion de 5 campos, no necesita ser exacta, solo ordenar bien.

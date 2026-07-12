@@ -96,7 +96,7 @@ function destilar(text: string | null, max = 260): string | null {
 }
 
 async function fetchDaemonTasks(): Promise<{ tasks: DaemonTask[]; tz: string; offline: boolean }> {
-  const fallback = { tasks: [] as DaemonTask[], tz: 'America/Mexico_City', offline: true }
+  const fallback = { tasks: [] as DaemonTask[], tz: process.env.DAEMON_TZ ?? 'America/Mexico_City', offline: true }
   if (!CLAUDECLAW_TOKEN) return fallback
   try {
     const res = await fetch(`${CLAUDECLAW_URL}/schedule`, {

@@ -196,7 +196,7 @@ function runClaudeCli(bin: string, prompt: string, signal: AbortSignal): Promise
       reject(new Error('Cancelado'))
       return
     }
-    // -p lee el prompt de stdin; cwd = repo para que cargue el contexto de Levy
+    // -p lee el prompt de stdin; cwd = repo para que cargue el contexto del agente
     const child = spawn(bin, ['-p', '--output-format', 'text'], {
       cwd: existsSync(ROOT) ? ROOT : process.cwd(),
       env: process.env,

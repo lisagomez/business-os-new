@@ -1,6 +1,6 @@
 // Segundo Cerebro — tipos compartidos entre el parser server-side y la UI.
 // Nodo = archivo curado (.claude/memory) o compilado (.claude/knowledge).
-// Los IDs son rutas relativas a .claude/ (ej. 'memory/user/paraguay.md').
+// Los IDs son rutas relativas a .claude/ (ej. 'memory/user/example.md').
 
 export type CerebroNodeType =
   | 'user'

@@ -4,6 +4,8 @@
 credenciales y TU agente, y opera tu negocio hablándole a tu copiloto — la UI
 existe para mirar, no para clickear.
 
+> **Estado: alpha (jul 2026).** El build de Next.js pasa verde y no hay credenciales ni datos personales en el código. Lo que falta por endurecer antes de producción: la migración bootstrap (`supabase db push`) contra un proyecto Supabase **virgen** no está probada end-to-end, y el empaquetado desktop (Tauri `cargo build`) tampoco. Trátalo como base de referencia, no como producto llave-en-mano.
+
 Stack: **Next.js (App Router) + Supabase + Tailwind v4 + Tauri** (desktop opcional).
 Diseño: sistema **Titaniumorphism** (elevación tipo Stripe + glass tipo Apple + profundidad tipo Linear).
 

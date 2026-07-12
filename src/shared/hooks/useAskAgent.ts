@@ -4,10 +4,11 @@ import { useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 
 /**
- * Camino conversacional AI-first (Regla de Oro #5): prellena el input del chat
- * con un draft. NUNCA auto-envía — ChatPanel lee ?draft= y solo hace setInput.
- * Gating: /chat es owner-only; renderiza los botones que lo usan solo si
- * useAuth().isOwner.
+ * AI-first conversational path: pre-fills the chat input with a draft and opens
+ * the chat. It NEVER auto-sends — the chat reads `?draft=` and only sets the
+ * input. Gate the buttons that use this behind owner access (the chat is
+ * owner-only). This is how "mirror" surfaces hand an action to the agent instead
+ * of adding operate-buttons of their own.
  */
 export function useAskAgent() {
   const router = useRouter()

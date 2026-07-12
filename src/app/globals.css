@@ -62,7 +62,7 @@
                0 8px 24px rgba(50, 50, 93, 0.12),
                0 4px 8px rgba(0, 0, 0, 0.07);
 
-  /* ===== TITANIUM DEPTH (canon SaaS Factory Community) ===== */
+  /* ===== TITANIUM DEPTH (titanium canon) ===== */
   --depth-rest: 0 1px 2px rgba(15, 23, 42, 0.08),
                 0 10px 28px rgba(15, 23, 42, 0.07),
                 inset 0 1px 0 rgba(255, 255, 255, 0.92);
@@ -1419,7 +1419,7 @@ html, body {
 }
 .md-preview th { color: var(--foreground); background: var(--code-bg); }
 
-/* Dev-only chrome from Next.js is not part of Mission Control's product UI.
+/* Dev-only chrome from Next.js is not part of Business OS's product UI.
    Hide it so desktop/web visual parity checks compare the actual app surface. */
 nextjs-portal,
 [data-nextjs-toast],

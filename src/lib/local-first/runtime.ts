@@ -118,7 +118,7 @@ export function onLocalFirstChanged(listener: () => void) {
 }
 
 async function invoke<T>(command: string, args?: Record<string, unknown>): Promise<T> {
-  if (!isDesktopRuntime()) throw new Error('Mission Control desktop runtime is not active')
+  if (!isDesktopRuntime()) throw new Error('Business OS desktop runtime is not active')
   const api = await import('@tauri-apps/api/core')
   return api.invoke<T>(command, args)
 }

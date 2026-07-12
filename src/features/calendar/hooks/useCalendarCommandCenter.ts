@@ -34,7 +34,7 @@ const LOCAL_SOURCE: CalendarSource = {
   accountType: 'personal',
   googleCalendarId: 'local',
   summary: 'Local Workspace',
-  description: 'Offline Mission Control calendar events queued for sync',
+  description: 'Offline Business OS calendar events queued for sync',
   backgroundColor: '#06b6d4',
   foregroundColor: '#ffffff',
   accessRole: 'owner',

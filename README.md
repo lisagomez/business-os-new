@@ -39,6 +39,7 @@ En la práctica:
 | **Search** | `Cmd+K` | Búsqueda global: tareas, documentos, actividades, mensajes (con soporte offline) |
 | **Conversations** | `/conversations` | Feed en vivo de las conversaciones de tus agentes |
 | **Settings** | `/settings` | Perfil, push, atajos, tema, ops |
+| **Artificial Brain** | `/segundo-cerebro` | Segundo cerebro: Neuronas (grafo de tu conocimiento curado + síntesis) + Acciones (actividad y costo de tus crons). Ver [`docs/ARTIFICIAL-BRAIN.md`](docs/ARTIFICIAL-BRAIN.md) |
 
 Todo corre también **offline-first** en la desktop (Tauri): snapshot local +
 sync al reconectar.
@@ -111,6 +112,7 @@ El archivo [.env.example](.env.example) está comentado línea por línea. Resum
 | `OBJECTIVE_CALENDAR_ID` | — | Calendario opcional de "objetivo del día" |
 | `GOG_KEYRING_PASSWORD` | — | Password del keyring del `gog` CLI (requerido para ESCRIBIR eventos) |
 | `OWNER_PROFILE_ID` | — | UUID de tu profile (attribution de escrituras del agente en canvas/sync) |
+| `MEMORY_ROOT` | — | (Artificial Brain · Neuronas) Ruta a TU carpeta de markdown curado (con `.claude/memory`/`.claude/knowledge`). Vacío por default: la sala muestra estado vacío honesto |
 | `TODOIST_API_TOKEN` | — | Token de Todoist para el sync del board (script en `integrations/`) |
 
 Sin las opcionales, la feature correspondiente se degrada con gracia (la app
@@ -244,6 +246,16 @@ construido con el **Claude Agent SDK** (un proceso Node que expone HTTP en
    en el otro. `due_at` en el board = vencimiento en Todoist y viceversa.
 
 ---
+
+## Documentación profunda (`docs/`)
+
+Guías por integración, con contratos y ejemplos:
+
+- [`docs/AGENT-SERVER.md`](docs/AGENT-SERVER.md) — el contrato HTTP app ↔ agente/daemon (chat SSE, `/api/openclaw/*`, push).
+- [`docs/CALENDAR-AND-CRONS.md`](docs/CALENDAR-AND-CRONS.md) — calendario (espejo Google + `gog`) y el monitor de crons / Cron Lens.
+- [`docs/TODOIST.md`](docs/TODOIST.md) — sync bidireccional del board con Todoist, gated por label.
+- [`docs/CANVAS.md`](docs/CANVAS.md) — el canvas `/draw3` y su API agéntica de ops (cómo un agente dibuja/edita).
+- [`docs/ARTIFICIAL-BRAIN.md`](docs/ARTIFICIAL-BRAIN.md) — el segundo cerebro: las salas, `MEMORY_ROOT`, y el contrato de Plasticidad/Metabolismo.
 
 ## Desktop (Tauri, opcional)
 

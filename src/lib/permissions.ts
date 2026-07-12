@@ -12,6 +12,7 @@ const ROUTE_PERMISSIONS: Record<string, UserRole[]> = {
   '/settings': ['owner', 'admin', 'member'],
   '/command-center': ['owner'],
   '/conversations': ['owner'],
+  '/segundo-cerebro': ['owner'],
 }
 
 export function canAccessRoute(pathname: string, role: UserRole): boolean {

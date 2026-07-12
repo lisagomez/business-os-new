@@ -66,7 +66,7 @@ function syncHealth(lastSyncedAt: string | null): CalendarSyncHealth {
     return {
       state: 'stale',
       lastSyncedAt: null,
-      message: 'Mission Control calendar mirror has no sync yet',
+      message: 'Business OS calendar mirror has no sync yet',
     }
   }
 
@@ -74,7 +74,7 @@ function syncHealth(lastSyncedAt: string | null): CalendarSyncHealth {
   return {
     state: age > MIRROR_STALE_AFTER_MS ? 'stale' : 'fresh',
     lastSyncedAt,
-    message: 'Loaded from Mission Control calendar mirror',
+    message: 'Loaded from Business OS calendar mirror',
   }
 }
 

@@ -373,7 +373,7 @@ export function CalendarCommandCenter() {
     if (!event.googleEventId || !event.accountEmail || !event.googleCalendarId || event.kind === 'task_due' || event.kind === 'read_only') {
       window.alert(event.kind === 'task_due'
         ? 'This is a Board due-date marker. Delete or edit the task due date from the Board.'
-        : 'This event cannot be deleted from Mission Control because Google Calendar exposes it as read-only.')
+        : 'This event cannot be deleted from Business OS because Google Calendar exposes it as read-only.')
       return
     }
 

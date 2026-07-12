@@ -175,7 +175,7 @@ export function CronHistoryPanel({
 
         <div className="border-t border-border-subtle px-4 py-2">
           <p className="text-[10px] text-muted/60">
-            Fuente: conversations (source=cron) en Supabase Mission Control. Muestra el output tal
+            Fuente: conversations (source=cron) en Supabase Business OS. Muestra el output tal
             cual quedo guardado; jobs configurados como silenciosos pueden no tener texto.
           </p>
         </div>

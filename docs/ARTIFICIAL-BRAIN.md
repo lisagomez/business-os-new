@@ -60,7 +60,7 @@ your jobs with zero config. It's AI-first: the only action is an **"Ask your
 agent"** button that deep-links the chat with a pre-filled draft — no operate
 buttons.
 
-API: `GET /api/arbrain/acciones?range=today|7d`.
+API: `GET /api/brain/acciones?range=today|7d`.
 
 ---
 

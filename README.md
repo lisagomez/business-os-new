@@ -29,7 +29,7 @@ En la práctica:
 | Módulo | Ruta | Qué hace |
 |--------|------|----------|
 | **Chat** | `/chat` | La cabina real: chat streaming (SSE) con tu agente/daemon, tool-calls visibles, TODOs en vivo, preguntas interactivas tocables, audio |
-| **Live (voz)** | `/chat` (tab Live) | HUD de voz: orbe, waveform, wake word ("Oye <tu agente>"), STT (Groq Whisper), TTS (daemon o ElevenLabs), push-to-talk con ESPACIO |
+| **Command Center / Live (voz)** | `/chat` (tab Live) | HUD de voz: orbe, waveform, wake word ("Oye <tu agente>"), STT (Groq Whisper), TTS (daemon o ElevenLabs), push-to-talk con ESPACIO. `/command-center` redirige aquí |
 | **Board** | `/board` | Kanban + lista de tareas con prioridades, labels, assignees, horizonte día/semana/mes |
 | **Calendar** | `/calendar` | Calendario con espejo de Google Calendar + capa de crons proyectados sobre el timeline |
 | **Canvas** | `/draw3` | Whiteboard colaborativo (motor v3): shapes, conectores, comentarios, presencia, API agéntica |
@@ -40,6 +40,7 @@ En la práctica:
 | **Conversations** | `/conversations` | Feed en vivo de las conversaciones de tus agentes |
 | **Settings** | `/settings` | Perfil, push, atajos, tema, ops |
 | **Artificial Brain** | `/segundo-cerebro` | Segundo cerebro: Neuronas (grafo de tu conocimiento curado + síntesis) + Acciones (actividad y costo de tus crons). Ver [`docs/ARTIFICIAL-BRAIN.md`](docs/ARTIFICIAL-BRAIN.md) |
+| **Finanzas** | `/finanzas` | Finanzas personales AI-first: capturas HABLANDO con tu agente (API), la UI es espejo de solo lectura (net worth, burn, runway, cierres). Ver [`docs/FINANCES.md`](docs/FINANCES.md) |
 
 Todo corre también **offline-first** en la desktop (Tauri): snapshot local +
 sync al reconectar.
@@ -113,6 +114,7 @@ El archivo [.env.example](.env.example) está comentado línea por línea. Resum
 | `GOG_KEYRING_PASSWORD` | — | Password del keyring del `gog` CLI (requerido para ESCRIBIR eventos) |
 | `OWNER_PROFILE_ID` | — | UUID de tu profile (attribution de escrituras del agente en canvas/sync) |
 | `MEMORY_ROOT` | — | (Artificial Brain · Neuronas) Ruta a TU carpeta de markdown curado (con `.claude/memory`/`.claude/knowledge`). Vacío por default: la sala muestra estado vacío honesto |
+| `FINANCE_TZ` | — | Zona horaria del "hoy" de finanzas (default `America/Mexico_City`) |
 | `TODOIST_API_TOKEN` | — | Token de Todoist para el sync del board (script en `integrations/`) |
 
 Sin las opcionales, la feature correspondiente se degrada con gracia (la app
@@ -256,6 +258,7 @@ Guías por integración, con contratos y ejemplos:
 - [`docs/TODOIST.md`](docs/TODOIST.md) — sync bidireccional del board con Todoist, gated por label.
 - [`docs/CANVAS.md`](docs/CANVAS.md) — el canvas `/draw3` y su API agéntica de ops (cómo un agente dibuja/edita).
 - [`docs/ARTIFICIAL-BRAIN.md`](docs/ARTIFICIAL-BRAIN.md) — el segundo cerebro: las salas, `MEMORY_ROOT`, y el contrato de Plasticidad/Metabolismo.
+- [`docs/FINANCES.md`](docs/FINANCES.md) — finanzas personales: schema, contrato del API (`add_movement`/`add_snapshot`/`add_recurring`) y el loop operativo para tu agente.
 
 ## Desktop (Tauri, opcional)
 

@@ -2,7 +2,7 @@
 -- Sin esta tabla, listMirrorCalendarSources() cae al fallback sourceFromEventRows()
 -- que solo conoce calendarios CON eventos en el mirror, asi que un calendario vacio
 -- no aparece como seleccionable al crear/editar un evento.
--- Poblada por claudeclaw/scripts/analytics/calendar_sync.sh (gog cal calendars).
+-- Poblada por el sync de calendario del daemon (gog cal calendars).
 
 CREATE TABLE IF NOT EXISTS calendar_sources (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),

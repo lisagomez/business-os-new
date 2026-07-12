@@ -20,7 +20,7 @@ export const openClawEventSchema = z.object({
   // pero NO inyecta al chat Automatizaciones ni manda push.
   silent: z.boolean().optional(),
   // Costo/tokens del run — une jobId + costo en la fila de conversations
-  // (sala Acciones del Artificial Brain). Lo manda claudeclaw executeCronJob.
+  // (sala Acciones del Artificial Brain). Lo manda el daemon al ejecutar un cron.
   usage: z.object({
     costUsd: z.number(),
     inputTokens: z.number(),

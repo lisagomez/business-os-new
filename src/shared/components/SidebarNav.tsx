@@ -13,6 +13,7 @@ import {
   Search,
   CalendarDays,
   Brain,
+  Wallet,
 } from 'lucide-react'
 import { canAccessRoute } from '@/lib/permissions'
 import { useIsMobile } from '@/shared/hooks/useMediaQuery'
@@ -30,6 +31,7 @@ const NAV_LINKS = [
   { href: '/calendar', label: 'Calendar', icon: CalendarDays },
   { href: '/draw3', label: 'Canvas', icon: Sparkles },
   { href: '/segundo-cerebro', label: 'Brain', icon: Brain },
+  { href: '/finanzas', label: 'Finanzas', icon: Wallet },
 ] as const
 
 interface SidebarNavProps {

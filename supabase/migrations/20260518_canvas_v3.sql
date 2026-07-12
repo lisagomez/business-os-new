@@ -1,5 +1,4 @@
 -- Canvas v3 migration
--- Branch: levy/canvas-v3
 -- Created: 2026-05-18
 -- Idempotent: safe to re-run
 

@@ -4,7 +4,7 @@
 // me cuesta? Órganos (crons) clasificados por función neurológica, actividad
 // destilada (no logs crudos) y costo por órgano. Es ESPEJO (AI-first): cualquier
 // acción se pide hablando con tu agente — el deep-link prellena el chat, no hay
-// botones de operación nuevos. Data 100% server-side (/api/arbrain/acciones).
+// botones de operación nuevos. Data 100% server-side (/api/brain/acciones).
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useAskAgent } from '@/shared/hooks/useAskAgent'
 import {
@@ -21,7 +21,7 @@ import {
   type CronAnatomia,
 } from '@/shared/constants/cron-taxonomy'
 
-// ─── Tipos (espejo de /api/arbrain/acciones) ────────────────────────────────
+// ─── Tipos (espejo de /api/brain/acciones) ────────────────────────────────
 
 interface OrganRun {
   runId: string
@@ -152,7 +152,7 @@ export function AccionesRoom() {
     setLoading(true)
     setError(null)
     try {
-      const res = await fetch(`/api/arbrain/acciones?range=${r}`)
+      const res = await fetch(`/api/brain/acciones?range=${r}`)
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
       setData(await res.json() as AccionesData)
     } catch (e) {

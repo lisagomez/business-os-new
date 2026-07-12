@@ -1,4 +1,4 @@
--- Mission Control Calendar Command Center
+-- Calendar Command Center
 -- Google Calendar remains the source of truth. These tables are local mirrors,
 -- preferences, sync state, and task links.
 

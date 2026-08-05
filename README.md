@@ -53,9 +53,36 @@ sync al reconectar.
 
 - Node.js 22+
 - Un proyecto [Supabase](https://supabase.com) (free tier alcanza)
-- Opcional: un daemon de agente (sección [Tu agente](#integración-el-agentedaemon-el-cerebro)), `gog` CLI para calendario, Rust/Tauri para la desktop
+- **Un agente**: tu Claude Code sirve tal cual, y es la vía recomendada — ver
+  [`docs/TU-AGENTE.md`](docs/TU-AGENTE.md). Un daemon propio es la alternativa
+  (contrato HTTP más abajo), no el requisito.
+- Opcional: `gog` CLI para calendario, Rust/Tauri para la desktop
 
 ### Instalación
+
+#### La forma recomendada: que lo instale tu agente
+
+Este repositorio se opera hablando, y se instala igual. Clónalo, abre Claude Code
+dentro, y pégale una sola línea:
+
+```bash
+git clone https://github.com/daniel-carreon/business-os-new.git && cd business-os-new
+claude
+```
+
+```
+Lee docs/INSTALAR.md y móntame el Business OS.
+```
+
+[`docs/INSTALAR.md`](docs/INSTALAR.md) es un manual escrito para el agente, no
+para ti: revisa tu Node, instala dependencias, prepara el `.env.local`, te pide
+**seis** llaves (no las 31), aplica las migraciones y verifica que quedaron. Se
+detiene donde no puede seguir solo en vez de inventar una credencial, y al final
+te dice **qué quedó apagado**.
+
+Lo único que haces tú es pegar tres llaves de Supabase cuando te las pida.
+
+#### A mano, si lo prefieres
 
 ```bash
 git clone <tu-fork> && cd business-os-new
